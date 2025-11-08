@@ -42,12 +42,14 @@ public class SimpleInputManager : MonoBehaviour
         gameplayKB["MoveRight"] = KeyCode.D;
         gameplayKB["Fire"] = KeyCode.Mouse0;
         gameplayKB["Interact"] = KeyCode.E;
+        gameplayKB["Pause"] = KeyCode.Escape;
         contextKeyboardBindings[InputContext.Gameplay] = gameplayKB;
         
         var gameplayGP = new Dictionary<string, KeyCode>();
         gameplayGP["Jump"] = KeyCode.JoystickButton4; // A/X button
         gameplayGP["Fire"] = KeyCode.JoystickButton1; // B/Circle
         gameplayGP["Interact"] = KeyCode.JoystickButton2; // X/Square
+        gameplayGP["Pause"] = KeyCode.JoystickButton7;
         contextGamepadBindings[InputContext.Gameplay] = gameplayGP;
         
         // UI CONTEXT

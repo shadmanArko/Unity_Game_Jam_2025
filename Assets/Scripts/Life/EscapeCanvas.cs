@@ -15,6 +15,8 @@ public class EscapeCanvas : MonoBehaviour
         resumeButton.onClick.AddListener(ResumeGame);
         endRunButton.onClick.AddListener(EndRunAndRestartGame);
         exitGameButton.onClick.AddListener(ExitGame);
+        SimpleInputManager.Instance.SetContext(SimpleInputManager.InputContext.Gameplay);
+
     }
 
     private void ExitGame()
@@ -36,7 +38,7 @@ public class EscapeCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (SimpleInputManager.Instance.GetButtonDown("Pause"))
         {
             escapeCanvasPanel.SetActive(!isPanelActive);
             isPanelActive = !isPanelActive;
