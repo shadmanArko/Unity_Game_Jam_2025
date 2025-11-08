@@ -32,13 +32,14 @@ public class SimplePlayerController : MonoBehaviour
         {
             spriteTransform = transform;
         }
+        SimpleInputManager.Instance.SetContext(SimpleInputManager.InputContext.Gameplay);
     }
     
     void Update()
     {
         // Get WASD input
-        float moveInputX = Input.GetAxisRaw("Horizontal");  // A/D or Left/Right arrows
-        float moveInputY = Input.GetAxisRaw("Vertical");    // W/S or Up/Down arrows
+        float moveInputX = SimpleInputManager.Instance.GetAxis("Horizontal");  // A/D or Left/Right arrows
+        float moveInputY = SimpleInputManager.Instance.GetAxis("Vertical");    // W/S or Up/Down arrows
         
         // Move the player
         Vector3 movement = new Vector3(moveInputX, moveInputY, 0) * moveSpeed * Time.deltaTime;
@@ -68,9 +69,10 @@ public class SimplePlayerController : MonoBehaviour
         }
         
         // Handle interaction
-        if (Input.GetKeyDown(interactKey))
+        if (SimpleInputManager.Instance.GetButtonDown("Interact"))
         {
             TryInteract();
+            
         }
         
         // Update sorting order based on Y position (optional for 2.5D games)
@@ -97,6 +99,7 @@ public class SimplePlayerController : MonoBehaviour
     
     private void TryInteract()
     {
+        Debug.Log("Attempting to interact...");
         if (interactablesInRange.Count == 0)
         {
             Debug.Log("Nothing to interact with nearby");
