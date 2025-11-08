@@ -36,10 +36,10 @@ public class EscapeCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Escape))
-        // {
-        //     escapeCanvasPanel.SetActive(!isPanelActive);
-        //     isPanelActive = !isPanelActive;
-        // }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            escapeCanvasPanel.SetActive(!isPanelActive);
+            isPanelActive = !isPanelActive;
+        }
     }
 }
