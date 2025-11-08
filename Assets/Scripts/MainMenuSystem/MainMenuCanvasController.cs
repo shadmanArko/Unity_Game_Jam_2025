@@ -15,7 +15,7 @@ namespace MainMenuSystem
 
         private void OnPressSnoozeButton()
         {
-            Actions.OnIncreaseTimeAction.Invoke(5);
+            Actions.OnDecreaseTimeAction.Invoke(5);
         }
 
         public void OnClickScreen()

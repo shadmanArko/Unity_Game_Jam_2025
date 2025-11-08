@@ -11,7 +11,7 @@ namespace TimeSystem
 
         private bool isTimeRunning;
         private float time;     // 2 seconds = 1 minute
-        private TimeSpan initialTimeSpan; 
+        private TimeSpan initialTimeSpan = new(0, 7, 0); 
         private float decreaseRate;
 
         private const float SecondsPerMinute = 2;
