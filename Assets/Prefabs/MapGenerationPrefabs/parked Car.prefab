@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3902596751718155249}
   - component: {fileID: 6763917550416083473}
   - component: {fileID: 1347896892343580217}
-  m_Layer: 0
+  - component: {fileID: 3248861087585599024}
+  m_Layer: 8
   m_Name: parked Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1076679829
+  m_SortingLayerID: -1753202385
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -8030835215644163416, guid: f3df7410227359042ac9a82bcf2a3968, type: 3}
@@ -125,6 +126,21 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.3}
-  m_Size: {x: 3.81, y: 1.36}
+  m_Offset: {x: -0.0031662348, y: -0.29999992}
+  m_Size: {x: 5.0591555, y: 1.0302951}
   m_Direction: 1
+--- !u!114 &3248861087585599024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2372365847869857553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e04125aaea4e19afd449b77189ac10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Utilities.StaticLayerSorter
+  sortingOffset: -1
+  yMultiplier: 100
+  spriteRenderer: {fileID: 6763917550416083473}
