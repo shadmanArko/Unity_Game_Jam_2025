@@ -14,6 +14,9 @@ namespace TimeSystem
         private TimeSpan initialTimeSpan; 
         private float decreaseRate;
 
+        private const float SecondsPerMinute = 2;
+        private float secondsPerMinuteTimer;
+
         private int initialTime;
         private int finalTime;
 
@@ -44,6 +47,8 @@ namespace TimeSystem
             initialTime = 0;
             finalTime = 360;
 
+            secondsPerMinuteTimer = 0f;
+
             initialTimeSpan = new TimeSpan(0, 7, 0);
             time = initialTime;
             timePanel.SetActive(true);
@@ -68,7 +73,15 @@ namespace TimeSystem
         private void UpdateTime()
         {
             if (!isTimeRunning) return;
-            time += Time.fixedDeltaTime;
+            
+            if (secondsPerMinuteTimer < SecondsPerMinute)
+            {
+                secondsPerMinuteTimer += Time.fixedDeltaTime; 
+                return;
+            }
+            time += 1f;
+            secondsPerMinuteTimer = 0f;
+            
             UpdateTimeText();
             
             if(time < finalTime) return;
