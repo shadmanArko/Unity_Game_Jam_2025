@@ -11,6 +11,7 @@ namespace Utilities
         
         // RoadChunk related actions
         public static Action<int> OnPlayerEnteredRoadChunkIndex;
+        public static Action<Transform> OnCameraTargetTransformChanged;
         
         // Time
         public static Action<int> OnIncreaseTimeAction;

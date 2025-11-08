@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utilities;
 
 public class UberCar : MonoBehaviour
 {
@@ -275,10 +276,11 @@ public class UberCar : MonoBehaviour
         // Disable player control
         if (player != null)
         {
-            var playerController = player.GetComponent<MonoBehaviour>();
+            var playerController = player.GetComponent<SimplePlayerController>();
             if (playerController != null)
             {
-                playerController.enabled = false;
+                playerController.DisableObject();
+                Actions.OnCameraTargetTransformChanged?.Invoke(transform);
             }
         }
     }
@@ -322,10 +324,12 @@ public class UberCar : MonoBehaviour
         // Re-enable player control
         if (player != null)
         {
-            var playerController = player.GetComponent<MonoBehaviour>();
+            var playerController = player.GetComponent<SimplePlayerController>();
             if (playerController != null)
             {
-                playerController.enabled = true;
+                playerController.transform.position = transform.position + Vector3.up * 2f; // Place player next to car
+                playerController.EnableObject();
+                Actions.OnCameraTargetTransformChanged?.Invoke(playerController.transform);
             }
         }
     }

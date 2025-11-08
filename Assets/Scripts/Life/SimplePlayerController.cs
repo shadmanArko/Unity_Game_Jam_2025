@@ -37,7 +37,15 @@ public class SimplePlayerController : MonoBehaviour
         SimpleInputManager.Instance.SetContext(SimpleInputManager.InputContext.Gameplay);
     }
 
+    public void DisableObject()
+    {
+        gameObject.SetActive(false);
+    }
    
+    public void EnableObject()
+    {
+        gameObject.SetActive(true);
+    }
 
     void Update()
     {

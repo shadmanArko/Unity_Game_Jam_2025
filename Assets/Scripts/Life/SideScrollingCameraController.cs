@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Utilities;
 
 public class SideScrollingCameraController : MonoBehaviour
 {
@@ -43,6 +45,7 @@ public class SideScrollingCameraController : MonoBehaviour
         {
             lastPlayerPosition = player.position;
         }
+        Actions.OnCameraTargetTransformChanged += SetTarget;
     }
     
     void LateUpdate()
@@ -128,7 +131,10 @@ public class SideScrollingCameraController : MonoBehaviour
         maxY = max;
         useYBounds = true;
     }
-    
+    public void SetTarget(Transform newTarget)
+    {
+        player = newTarget;
+    }
     // Visualize bounds in editor
     void OnDrawGizmosSelected()
     {
@@ -193,5 +199,10 @@ public class SideScrollingCameraController : MonoBehaviour
         // Draw current camera view
         Gizmos.color = Color.white;
         Gizmos.DrawWireCube(transform.position, new Vector3(camWidth, camHeight, 0.1f));
+    }
+
+    private void OnDisable()
+    {
+        Actions.OnCameraTargetTransformChanged -= SetTarget;
     }
 }
