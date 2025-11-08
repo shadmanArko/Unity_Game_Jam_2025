@@ -8,5 +8,8 @@ namespace Utilities
     {
         public static Action<Vector2> OnMoveInput;
         public static Action OnInteractInput;
+        
+        //RoadChunk related actions
+        public static Action<int> OnPlayerEnteredRoadChunkIndex;
     }
 }
