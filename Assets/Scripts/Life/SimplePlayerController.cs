@@ -241,6 +241,7 @@ namespace Life
     // Interface for interactable objects
     public interface IInteractable
     {
+        public bool IsInteractable { get; set; }
         void Interact(SimplePlayerController player);
     }
 
@@ -248,6 +249,8 @@ namespace Life
     public class ExampleInteractable : MonoBehaviour, IInteractable
     {
         [SerializeField] private string interactionMessage = "Hello!";
+
+        public bool IsInteractable { get; set; }
 
         public void Interact(SimplePlayerController player)
         {
