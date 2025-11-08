@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities;
 
 namespace MainMenuSystem
 {
@@ -14,6 +15,11 @@ namespace MainMenuSystem
         }
 
         public void OnPressSnoozeButton()
+        {
+            GameReference.instance.currencyScriptable.time += 5;
+        }
+
+        public void OnClickScreen()
         {
             
         }
