@@ -569,6 +569,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &58697481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 58697482}
+  m_Layer: 0
+  m_Name: Parked Cars
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &58697482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58697481}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.98843, y: -0.48292, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1315428804}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &81070065
 GameObject:
   m_ObjectHideFlags: 0
@@ -6563,6 +6595,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1315428804 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+  m_PrefabInstance: {fileID: 8859538068765799087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1321255116
 GameObject:
   m_ObjectHideFlags: 0
@@ -7543,7 +7580,7 @@ MonoBehaviour:
   minX: -1.93
   maxX: 103
   useLookAhead: 1
-  lookAheadDistanceX: 5
+  lookAheadDistanceX: 3
   lookAheadDistanceY: 1
   lookAheadDamping: 3
   lookAheadThreshold: 0.1
@@ -9909,6 +9946,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6324857773647115593, guid: ad6fafc312ad8934ca287b0f44b1da20, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8709100626063288371, guid: ad6fafc312ad8934ca287b0f44b1da20, type: 3}
       propertyPath: m_Name
       value: Player
@@ -10076,6 +10117,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16faa159915434e46ba771382aa23560, type: 3}
+--- !u!1001 &8859538068765799087
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 58697482}
+    m_Modifications:
+    - target: {fileID: 2372365847869857553, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_Name
+      value: parked Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10088,3 +10186,4 @@ SceneRoots:
   - {fileID: 1158313359}
   - {fileID: 4498447455980746841}
   - {fileID: 629038026}
+  - {fileID: 58697482}
