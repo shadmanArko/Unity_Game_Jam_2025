@@ -689,51 +689,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BedInteractable
       objectReference: {fileID: 0}
-    - target: {fileID: 3181282190017588673, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3181282190017588673, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1753202385
-      objectReference: {fileID: 0}
-    - target: {fileID: 6012236644078981192, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2479056185316548164, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1703132529}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
---- !u!1 &1703132527 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2479056185316548164, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-  m_PrefabInstance: {fileID: 1703132526}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1703132528 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3181282190017588673, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-  m_PrefabInstance: {fileID: 1703132526}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1703132529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703132527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e04125aaea4e19afd449b77189ac10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Utilities.StaticLayerSorter
-  sortingOffset: 0
-  yMultiplier: 1000
-  spriteRenderer: {fileID: 1703132528}
 --- !u!4 &1730812680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6040880723271793082, guid: 4606db68398fc214cbff6f2320f91519, type: 3}

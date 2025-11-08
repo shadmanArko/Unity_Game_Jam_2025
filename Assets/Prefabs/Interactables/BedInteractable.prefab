@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6012236644078981192}
   - component: {fileID: 3181282190017588673}
   - component: {fileID: 4796144897907572533}
+  - component: {fileID: 6352512506385895532}
   m_Layer: 7
   m_Name: BedInteractable
   m_TagString: Untagged
@@ -125,8 +126,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1753202385
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fab06e0be9375cc4d823efa71629885c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -154,6 +155,21 @@ MonoBehaviour:
   interactablePopUp: {fileID: 4747525419761927132}
   isInteractable: 1
   isShowingPopUp: 0
+--- !u!114 &6352512506385895532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479056185316548164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e04125aaea4e19afd449b77189ac10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Utilities.StaticLayerSorter
+  sortingOffset: 0
+  yMultiplier: 1000
+  spriteRenderer: {fileID: 3181282190017588673}
 --- !u!1 &2709569518446238612
 GameObject:
   m_ObjectHideFlags: 0
