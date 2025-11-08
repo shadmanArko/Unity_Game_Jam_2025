@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class SimplePlayerController : MonoBehaviour
 {
@@ -34,7 +36,9 @@ public class SimplePlayerController : MonoBehaviour
         }
         SimpleInputManager.Instance.SetContext(SimpleInputManager.InputContext.Gameplay);
     }
-    
+
+   
+
     void Update()
     {
         // Get WASD input
@@ -140,6 +144,11 @@ public class SimplePlayerController : MonoBehaviour
         {
             interactablesInRange.Add(interactable);
             Debug.Log($"Can interact with: {other.gameObject.name}");
+        }
+
+        if (other.GetComponent<RoadChunk>())
+        {
+            Debug.Log($"Entered RoadChunk: {other.gameObject.name} with index {other.GetComponent<RoadChunk>().chunkIndex}");
         }
     }
     

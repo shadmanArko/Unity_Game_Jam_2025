@@ -99,6 +99,7 @@ public class SideScrollingMapGenerator : MonoBehaviour
         
         for (int i = 0; i < layer.repeatCount; i++)
         {
+            bool roadChunk = false;
             // Get a random prefab from the layer (or the only one if single)
             GameObject prefabToSpawn = layer.GetRandomPrefab();
             
@@ -110,7 +111,10 @@ public class SideScrollingMapGenerator : MonoBehaviour
             
             // Instantiate the asset
             GameObject instance = Instantiate(prefabToSpawn, currentPosition, Quaternion.identity);
-            
+            if (prefabToSpawn.GetComponent<RoadChunk>())
+            {
+                roadChunk = true;
+            }
             // Set parent
             if (spawnParent != null)
             {
@@ -120,7 +124,11 @@ public class SideScrollingMapGenerator : MonoBehaviour
             {
                 instance.transform.SetParent(transform);
             }
-            
+
+            if (roadChunk)
+            {
+                instance.GetComponent<RoadChunk>().chunkIndex = i;
+            }
             // Name it for easy identification
             instance.name = $"{prefabToSpawn.name}_{i}";
             
