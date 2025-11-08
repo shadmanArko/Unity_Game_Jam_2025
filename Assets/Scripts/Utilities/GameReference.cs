@@ -1,6 +1,7 @@
 using System;
 using GameManager;
 using MainMenuSystem;
+using TimeSystem;
 using UnityEngine;
 
 namespace Utilities
@@ -15,6 +16,7 @@ namespace Utilities
         
         [Header("Controllers")]
         public MainMenuCanvasController mainMenuCanvasController;
+        public TimeController timeController;
         
         
         
