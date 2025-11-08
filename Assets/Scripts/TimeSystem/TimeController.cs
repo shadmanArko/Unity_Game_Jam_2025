@@ -39,6 +39,8 @@ namespace TimeSystem
             Actions.OnStartTimeAction += InitializeTime;
             Actions.OnIncreaseTimeAction += IncreaseTime;
             Actions.OnDecreaseTimeAction += DecreaseTime;
+            
+            UpdateTimeText();
         }
 
         private void InitializeTime()
@@ -57,11 +59,13 @@ namespace TimeSystem
         private void IncreaseTime(int value)
         {
             time -= value;
+            UpdateTimeText();
         }
 
         private void DecreaseTime(int value)
         {
             time += value;
+            UpdateTimeText();
         }
         
         public int GetTime() => Mathf.FloorToInt(time);

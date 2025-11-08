@@ -10547,13 +10547,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenuCanvasController
       objectReference: {fileID: 0}
-    - target: {fileID: 5072113541804237368, guid: 31bc93206cadf5b4480562b64dfd9187, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6797733878286888546, guid: 31bc93206cadf5b4480562b64dfd9187, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+      propertyPath: m_SortingOrder
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

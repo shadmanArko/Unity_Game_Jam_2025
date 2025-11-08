@@ -6,16 +6,16 @@ namespace MainMenuSystem
 {
     public class MainMenuCanvasController : MonoBehaviour
     {
-        private Button snoozeButton;
+        [SerializeField] private Button snoozeButton;
 
         private void Start()
         {
             snoozeButton.onClick.AddListener(OnPressSnoozeButton);
         }
 
-        public void OnPressSnoozeButton()
+        private void OnPressSnoozeButton()
         {
-            GameReference.instance.currencyScriptable.time += 5;
+            Actions.OnIncreaseTimeAction.Invoke(5);
         }
 
         public void OnClickScreen()
@@ -25,7 +25,8 @@ namespace MainMenuSystem
 
         private void StartGame()
         {
-            
+            gameObject.SetActive(false);
+            Actions.OnStartTimeAction.Invoke();
         }
     }
 }
