@@ -13,9 +13,9 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
-  - 
+  - Interactable
+  - Obstacle
+  - Player
   - 
   - 
   - 
@@ -39,8 +39,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Sky
+    uniqueID: 1318900917
+    locked: 0
+  - name: Wall
+    uniqueID: 3759103687
+    locked: 0
+  - name: Building
+    uniqueID: 2457505843
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: DynamicLayer
+    uniqueID: 2541764911
     locked: 0
   - name: Player
     uniqueID: 1076679829
