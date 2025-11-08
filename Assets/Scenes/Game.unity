@@ -3861,10 +3861,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: parked Car
       objectReference: {fileID: 0}
-    - target: {fileID: 2372365847869857553, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 3902596751718155249, guid: 0339bde5c88e0d84cb0be32c6b36ddc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.48

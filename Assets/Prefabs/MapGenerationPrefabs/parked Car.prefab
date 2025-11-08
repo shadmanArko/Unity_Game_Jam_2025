@@ -142,5 +142,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Utilities.StaticLayerSorter
   sortingOffset: -1
-  yMultiplier: 100
+  yMultiplier: 1000
   spriteRenderer: {fileID: 6763917550416083473}
