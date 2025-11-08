@@ -6,9 +6,18 @@ namespace Life
     public class SimplePlayerController : MonoBehaviour
     {
         [Header("Movement")] [SerializeField] private float moveSpeed = 5f;
-
+        
         [Header("Movement Bounds")] [SerializeField]
         private bool useXBounds = true;
+    public void DisableObject()
+    {
+        gameObject.SetActive(false);
+    }
+   
+    public void EnableObject()
+    {
+        gameObject.SetActive(true);
+    }
 
         [SerializeField] private float minX = -10f;
         [SerializeField] private float maxX = 10f;
