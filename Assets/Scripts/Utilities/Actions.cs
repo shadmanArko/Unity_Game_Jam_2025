@@ -9,6 +9,9 @@ namespace Utilities
         public static Action<Vector2> OnMoveInputAction;
         public static Action OnInteractInputAction;
         
+        // RoadChunk related actions
+        public static Action<int> OnPlayerEnteredRoadChunkIndex;
+        
         // Time
         public static Action<int> OnIncreaseTimeAction;
         public static Action<int> OnDecreaseTimeAction;
