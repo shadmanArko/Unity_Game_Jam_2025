@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
@@ -20,6 +19,11 @@ namespace MainMenuSystem
         }
 
         public void OnClickScreen()
+        {
+            StartGame();
+        }
+
+        private void StartGame()
         {
             
         }
