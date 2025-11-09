@@ -1,23 +1,31 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities;
 
 namespace Life
 {
     public class SimplePlayerController : MonoBehaviour
     {
         [Header("Movement")] [SerializeField] private float moveSpeed = 5f;
-        
+
         [Header("Movement Bounds")] [SerializeField]
         private bool useXBounds = true;
-    public void DisableObject()
-    {
-        gameObject.SetActive(false);
-    }
-   
-    public void EnableObject()
-    {
-        gameObject.SetActive(true);
-    }
+
+        public bool canMove;
+
+        public void EnableMovement() => canMove = true;
+
+        public void DisableMovement() => canMove = false;
+
+        public void DisableObject()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void EnableObject()
+        {
+            gameObject.SetActive(true);
+        }
 
         [SerializeField] private float minX = -10f;
         [SerializeField] private float maxX = 10f;
@@ -43,6 +51,7 @@ namespace Life
 
         private void Start()
         {
+            canMove = true;
             // If no sprite transform is assigned, use self
             if (spriteTransform == null)
             {
@@ -55,8 +64,14 @@ namespace Life
         private void Update()
         {
             // Get WASD input
-            float moveInputX = SimpleInputManager.Instance.GetAxis("Horizontal"); // A/D or Left/Right arrows
-            float moveInputY = SimpleInputManager.Instance.GetAxis("Vertical"); // W/S or Up/Down arrows
+            var moveInputX = SimpleInputManager.Instance.GetAxis("Horizontal"); // A/D or Left/Right arrows
+            var moveInputY = SimpleInputManager.Instance.GetAxis("Vertical"); // W/S or Up/Down arrows
+
+            if (!canMove)
+            {
+                moveInputX = 0;
+                moveInputY = 0;
+            }
 
             moveInput = new Vector2(moveInputX, moveInputY);
 
@@ -86,8 +101,8 @@ namespace Life
         private void FixedUpdate()
         {
             // Calculate movement
-            Vector2 movement = moveInput.normalized * (moveSpeed * Time.fixedDeltaTime);
-            Vector2 newPosition = rb.position + movement;
+            var movement = moveInput.normalized * (moveSpeed * Time.fixedDeltaTime);
+            var newPosition = rb.position + movement;
 
             // Apply bounds to the new position
             if (useXBounds)
@@ -168,6 +183,7 @@ namespace Life
             {
                 Debug.Log(
                     $"Entered RoadChunk: {other.gameObject.name} with index {other.GetComponent<RoadChunk>().chunkIndex}");
+                Actions.OnPlayerEnteredRoadChunkIndex?.Invoke(other.GetComponent<RoadChunk>().chunkIndex);
             }
         }
 
