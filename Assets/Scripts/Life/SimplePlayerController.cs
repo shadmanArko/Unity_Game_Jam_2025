@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities;
 
 namespace Life
 {
@@ -168,6 +169,7 @@ namespace Life
             {
                 Debug.Log(
                     $"Entered RoadChunk: {other.gameObject.name} with index {other.GetComponent<RoadChunk>().chunkIndex}");
+                Actions.OnPlayerEnteredRoadChunkIndex?.Invoke(other.GetComponent<RoadChunk>().chunkIndex);
             }
         }
 
