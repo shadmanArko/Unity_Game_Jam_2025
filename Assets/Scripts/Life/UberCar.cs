@@ -67,6 +67,11 @@ namespace Life
 
         private void OnEnable()
         {
+            GetReference();
+        }
+
+        private void GetReference()
+        {
             player = GameObject.FindGameObjectWithTag("Player")?.transform;
             destinationTarget = GameObject.FindGameObjectWithTag("Office")?.transform;
         }
@@ -182,6 +187,7 @@ namespace Life
         [ContextMenu("call Uber")]
         public void CallUber()
         {
+            GetReference();
             if (player == null)
             {
                 Debug.LogError("Player reference not set!");

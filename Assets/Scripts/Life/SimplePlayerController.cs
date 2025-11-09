@@ -13,8 +13,9 @@ namespace Life
 
         public bool canMove;
         
-        public float energyDecreaseRate = 3f;
-        public float energyDecreaseInterval = 1f;
+        public int energyDecreaseRate = 1;
+        public float energyDecreaseInterval = 2f;
+        private float lastEnergyDecreaseTime = 0f;
 
         public void EnableMovement() => canMove = true;
 
@@ -78,7 +79,12 @@ namespace Life
                 moveInputX = 0;
                 moveInputY = 0;
             }
-            DecreaseEnergyOverTime();
+
+            if (Time.time >= lastEnergyDecreaseTime + energyDecreaseInterval)
+            {
+                DecreaseEnergyOverTime();
+                lastEnergyDecreaseTime = Time.time;
+            }
             moveInput = new Vector2(moveInputX, moveInputY);
 
             // Check if player is moving
@@ -108,13 +114,11 @@ namespace Life
         {
             var currentEnergy = GameReference.instance.currencyManager.currentEnergy;
 
-            // Calculate 3% of current energy
-            int decreaseAmount = (int)(currentEnergy * 0.03f);
-
+            
             // Apply the decrease
 
             // Invoke the action, optionally passing the decreased amount if needed
-            Actions.OnDecreaseEnergyAction?.Invoke(decreaseAmount);
+            Actions.OnDecreaseEnergyAction?.Invoke(energyDecreaseRate);
         }
 
 
