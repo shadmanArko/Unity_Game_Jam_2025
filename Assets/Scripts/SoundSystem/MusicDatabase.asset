@@ -10,17 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ddc8bc948404012b826c2c62c14b5b6, type: 3}
-  m_Name: SFXDatabase
+  m_Name: MusicDatabase
   m_EditorClassIdentifier: Assembly-CSharp::SoundSystem.SfxDatabase
   sfxList:
-  - key: alarm
-    eventReference:
-      Guid:
-        Data1: -256630070
-        Data2: 1149941341
-        Data3: 743348353
-        Data4: -205359934
-      Path: event:/SFX/Alarm
   - key: Music
     eventReference:
       Guid:

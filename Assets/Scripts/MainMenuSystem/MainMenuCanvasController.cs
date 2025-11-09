@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using SoundSystem;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,16 +10,18 @@ namespace MainMenuSystem
     {
         [SerializeField] private Button snoozeButton;
 
+        private EventInstance snoozeSfx;
         private void Start()
         {
             snoozeButton.onClick.AddListener(OnPressSnoozeButton);
-            SoundManager.Instance.PlayEnemyOneShot($"alarm", transform.position);
+            snoozeSfx = SoundManager.Instance.PlaySfx($"alarm", transform.position);
         }
 
         private void OnPressSnoozeButton()
         {
             Actions.OnDecreaseTimeAction.Invoke(5);
         }
+        
 
         public void OnClickScreen()
         {
@@ -29,6 +32,8 @@ namespace MainMenuSystem
         {
             gameObject.SetActive(false);
             Actions.OnStartTimeAction.Invoke();
+            SoundManager.Instance.StopSfxByName("alarm");
+            SoundManager.Instance.PlaySfx($"Music", transform.position);
         }
     }
 }
