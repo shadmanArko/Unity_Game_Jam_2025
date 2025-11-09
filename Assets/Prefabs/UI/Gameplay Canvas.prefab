@@ -503,7 +503,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is default message,
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1223,12 +1223,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f77720edded8b48a4454669f798059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  baseUberCarFair: 300
+  baseUberBikeFair: 100
   energyBarFill: {fileID: 844441068313165347}
   moneyText: {fileID: 4696184996814391273}
   smallMobileButton: {fileID: 782712516931050892}
   bigMobileScreen: {fileID: 5500439591658498812}
   callCarButton: {fileID: 13144583707664852}
   callBikeButton: {fileID: 2453551617173126678}
+  msgPopUpPanel: {fileID: 3907122252834086814}
+  msgPopUpText: {fileID: 2486149606514998140}
+  bigScreenMsgPopUpText: {fileID: 8818263707633448441}
+  notificationImage: {fileID: 2434949381472261573}
+  hasNotification: 0
 --- !u!1 &5982221041820817781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7953757852908630354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1517,7 +1524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2384434153607108757
 RectTransform:
   m_ObjectHideFlags: 0
