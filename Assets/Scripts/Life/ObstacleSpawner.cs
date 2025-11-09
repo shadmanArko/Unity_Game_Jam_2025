@@ -7,6 +7,7 @@ public class ObstacleSpawner : MonoBehaviour
 {
     private int lastChunkIndex = -1;
     [SerializeField] private List<GameObject> roadBlockerObstacles = new List<GameObject>();
+    [SerializeField] private List<GameObject> officeBlockerObjects = new List<GameObject>();
     private List<RoadChunk> roadChunks = new List<RoadChunk>();
     [SerializeField] [Range(0, 1)] private float obstacleSpawnProbability = 0.3f; // 30% chance to spawn an obstacle
     private List<GameObject> spawnedObstacles = new List<GameObject>();
@@ -33,10 +34,21 @@ public class ObstacleSpawner : MonoBehaviour
                 // For simplicity, just log the spawn event
                 Debug.Log("Spawning obstacle in chunk " + chunkIndex);
                 // Here you would instantiate your obstacle prefab at a random position within the chunk
-                var obstacle = GameObject.Instantiate(roadBlockerObstacles[UnityEngine.Random.Range(0, roadBlockerObstacles.Count)],
-                    targetChunk.transform.position,
-                    Quaternion.identity);
-                spawnedObstacles.Add(obstacle);
+                if (chunkIndex> 8)
+                {
+                    var obstacle = GameObject.Instantiate(officeBlockerObjects[UnityEngine.Random.Range(0, officeBlockerObjects.Count)],
+                        targetChunk.transform.position,
+                        Quaternion.identity);
+                    spawnedObstacles.Add(obstacle);
+                }
+                else
+                {
+                    var obstacle = GameObject.Instantiate(roadBlockerObstacles[UnityEngine.Random.Range(0, roadBlockerObstacles.Count)],
+                        targetChunk.transform.position,
+                        Quaternion.identity);
+                    spawnedObstacles.Add(obstacle);
+                }
+                
             }
             else
             {
