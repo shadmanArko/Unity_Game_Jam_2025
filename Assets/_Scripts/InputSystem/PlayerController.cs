@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace _Scripts.InputSystem
@@ -30,6 +32,28 @@ namespace _Scripts.InputSystem
         private float moveInputX;
         private float moveInputY;
 
+        
+        [ContextMenu("teleportPlayer")]
+        public void TeleportPlayer()
+        {
+            StartCoroutine(TeleportWithFade());
+        }
+    
+        private IEnumerator TeleportWithFade()
+        {
+            // Step 1: Fade to black
+            yield return StartCoroutine(FadeManager.Instance.FadeIn());
+        
+            // Step 2: Change player position while screen is black
+        
+            // Optional: Small delay while screen is black
+            yield return new WaitForSeconds(0.5f);
+        
+            // Step 3: Fade back from black
+            yield return StartCoroutine(FadeManager.Instance.FadeOut());
+        }
+        
+        
         private void Start()
         {
             // Store the ground position
