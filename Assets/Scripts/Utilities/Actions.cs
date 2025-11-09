@@ -13,6 +13,14 @@ namespace Utilities
         public static Action<int> OnPlayerEnteredRoadChunkIndex;
         public static Action<Transform> OnCameraTargetTransformChanged;
         
+        // Money
+        public static Action<int> OnIncreaseMoneyAction;
+        public static Action<int> OnDecreaseMoneyAction;
+        
+        // Energy
+        public static Action<int> OnIncreaseEnergyAction;
+        public static Action<int> OnDecreaseEnergyAction;
+        
         // Time
         public static Action<int> OnIncreaseTimeAction;
         public static Action<int> OnDecreaseTimeAction;
