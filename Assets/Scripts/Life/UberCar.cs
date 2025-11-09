@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Utilities;
 
@@ -10,7 +11,7 @@ namespace Life
         [SerializeField] private float reverseSpeed = 3f;
         [SerializeField] private float stopDistance = 0.5f;
         [SerializeField] private float laneChangeSpeed = 3f;
-    
+        
         [Header("Road Bounds (World Space)")]
         [SerializeField] private float roadCenterY = 0f; // Y position of road center
         [SerializeField] private float roadHalfWidth = 2f; // Half width of road
@@ -34,7 +35,7 @@ namespace Life
         [Header("Pickup Settings")]
         [SerializeField] private float pickupRadius = 2f;
         [SerializeField] private float waitTimeBeforeStart = 1f;
-
+        public bool isBike = false;
         private Animator _animator;
         
         public enum CarState
@@ -63,7 +64,13 @@ namespace Life
         // Computed road bounds
         private float minY => roadCenterY - roadHalfWidth;
         private float maxY => roadCenterY + roadHalfWidth;
-    
+
+        private void OnEnable()
+        {
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+            destinationTarget = GameObject.FindGameObjectWithTag("Office")?.transform;
+        }
+
         void Start()
         {
             targetY = transform.position.y;
@@ -76,6 +83,7 @@ namespace Life
             }
 
             _animator = GetComponent<Animator>();
+            
         }
     
         void Update()
@@ -418,6 +426,7 @@ namespace Life
                     Actions.OnCameraTargetTransformChanged?.Invoke(playerController.transform);
                     if (_animator != null)
                         _animator.SetTrigger("OnPassangerLeft");
+                    Actions.OnPlayerDroppedOff?.Invoke(isBike);
                 }
             }
         }

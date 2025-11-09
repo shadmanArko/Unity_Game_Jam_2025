@@ -13,6 +13,7 @@ namespace TimeSystem
         private float time;     // 2 seconds = 1 minute
         private TimeSpan initialTimeSpan = new(0, 7, 0); 
         private float decreaseRate;
+        private TimeSpan currentTimeSpan;
 
         private const float SecondsPerMinute = 2;
         private float secondsPerMinuteTimer;
@@ -31,7 +32,9 @@ namespace TimeSystem
 
         private void Awake()
         {
+            currentTimeSpan = new TimeSpan();
             isTimeRunning = false;
+            time = 0f;
         }
 
         private void Start()
@@ -46,29 +49,29 @@ namespace TimeSystem
         private void InitializeTime()
         {
             isTimeRunning = true;
-            initialTime = 0;
-            finalTime = 240;
+            // initialTime = 0;
+            finalTime = 120;
 
             secondsPerMinuteTimer = 0f;
 
             initialTimeSpan = new TimeSpan(0, 7, 0);
-            time = initialTime;
+            // time = initialTime;
             timePanel.SetActive(true);
         }
 
         private void IncreaseTime(int value)
         {
-            time -= value * 2;
+            time -= value;
             UpdateTimeText();
         }
 
         private void DecreaseTime(int value)
         {
-            time += value * 2;
+            time += value;
             UpdateTimeText();
         }
         
-        public int GetTime() => Mathf.FloorToInt(time);
+        public TimeSpan GetTime() => currentTimeSpan;
         private void FixedUpdate()
         {
             UpdateTime();
@@ -99,6 +102,7 @@ namespace TimeSystem
         {
             var timeSpan = TimeSpan.FromSeconds(time);
             var totalTimeSpan = initialTimeSpan + timeSpan;
+            currentTimeSpan = totalTimeSpan;
             var formattedTime = $"{totalTimeSpan.Minutes:D2}:{totalTimeSpan.Seconds:D2}";
             timeText.text = formattedTime;
         }

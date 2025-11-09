@@ -8,6 +8,7 @@ public class FadeManager : MonoBehaviour
     
     [SerializeField] private Image fadeImage; // Black image that covers the screen
     [SerializeField] private float fadeDuration = 1f; // How long the fade takes
+    [SerializeField] private GameObject fadeCanvas;
     
     private void Awake()
     {
@@ -63,5 +64,15 @@ public class FadeManager : MonoBehaviour
         Color color = fadeImage.color;
         color.a = alpha;
         fadeImage.color = color;
+    }
+
+    public void EnableFadeCanvas()
+    {
+        fadeCanvas.SetActive(true);
+    }
+
+    public void DisableFadeCanvas()
+    {
+        fadeCanvas.SetActive(false);
     }
 }

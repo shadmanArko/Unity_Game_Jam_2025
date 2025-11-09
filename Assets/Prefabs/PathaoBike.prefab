@@ -111,8 +111,8 @@ MonoBehaviour:
   reverseSpeed: 3
   stopDistance: 0.5
   laneChangeSpeed: 3
-  minY: -5.19
-  maxY: -2.08
+  roadCenterY: 0
+  roadHalfWidth: 2
   earlyAvoidanceDistance: 9.74
   detectionWidth: 1
   obstacleLayer:
@@ -120,10 +120,14 @@ MonoBehaviour:
     m_Bits: 256
   avoidanceOffset: 1
   safetyMargin: 0.3
+  stuckCheckInterval: 2
+  stuckDistanceThreshold: 0.5
+  stuckTimeThreshold: 3
   player: {fileID: 0}
   destinationTarget: {fileID: 0}
   pickupRadius: 2
   waitTimeBeforeStart: 1
+  isBike: 1
 --- !u!114 &8916594651976732007
 MonoBehaviour:
   m_ObjectHideFlags: 0

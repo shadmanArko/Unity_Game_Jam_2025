@@ -2,6 +2,7 @@ using _Scripts.InputSystem;
 using GameManager;
 using Life;
 using MainMenuSystem;
+using NotificationSystem;
 using TimeSystem;
 using UnityEngine;
 
@@ -19,6 +20,9 @@ namespace Utilities
         public TimeController timeController;
         public SimplePlayerController playerController;
         public SideScrollingCameraController cameraController;
+        public NotificationCanvasController notificationCanvasController;
+
+        [Header("Managers")] public CurrencyManager currencyManager;
         
         // GameObjects
         [Header("GamObjects")]

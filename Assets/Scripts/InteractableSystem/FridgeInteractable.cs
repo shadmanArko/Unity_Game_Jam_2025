@@ -10,11 +10,13 @@ namespace InteractableSystem
         [SerializeField] private SpriteRenderer spriteRend;
         [SerializeField] private Sprite fridgeOpenSprite;
         [SerializeField] private Sprite fridgeCloseSprite;
+
+        [SerializeField] private GameObject tableFood;
         
         private void OnTriggerEnter2D(Collider2D other)
         {
             if(!other.gameObject.CompareTag("Player")) return;
-            if(!isInteractable) return;
+            if(!IsInteractable) return;
             ShowInteractPopUp();
         }
         
@@ -44,6 +46,8 @@ namespace InteractableSystem
             player.EnableMovement();
             await Task.Delay(500);
             spriteRend.sprite = fridgeCloseSprite;
+            tableFood.gameObject.SetActive(true);
+            IsInteractable = false;
         }
 
         public override void OnInteractionComplete()
