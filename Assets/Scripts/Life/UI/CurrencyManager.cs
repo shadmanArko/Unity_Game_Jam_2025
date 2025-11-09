@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Utilities;
 
@@ -60,5 +61,13 @@ public class CurrencyManager : MonoBehaviour
     private void OnEnergyChanged()
     {
         Actions.OnEnergyChangedTo?.Invoke(currentEnergy);
+    }
+
+    private void OnDisable()
+    {
+        Actions.OnIncreaseEnergyAction -= OnIncreaseEnergyAction;
+        Actions.OnDecreaseEnergyAction -= OnDecreaseEnergyAction;
+        Actions.OnIncreaseMoneyAction -= OnIncreaseMoneyAction;
+        Actions.OnDecreaseMoneyAction -= OnDecreaseMoneyAction;
     }
 }

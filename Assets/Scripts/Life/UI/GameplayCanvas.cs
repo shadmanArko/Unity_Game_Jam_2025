@@ -12,11 +12,30 @@ public class GameplayCanvas : MonoBehaviour
    public Image bigMobileScreen;
    public Button callCarButton;
    public Button callBikeButton;
-
+   private bool isMobileScreenActive = false;
    private void OnEnable()
    {
       Actions.OnEnergyChangedTo += UpdateEnergyBar;
       Actions.OnMoneyChangedTo += UpdateMoneyText;
+      smallMobileButton.onClick.AddListener(ToggleMobileScreen);
+      callBikeButton.onClick.AddListener(OnBikeCallButtonClicked);
+      callCarButton.onClick.AddListener(OnCarCallButtonClicked);
+   }
+
+   private void OnBikeCallButtonClicked()
+   {
+      Actions.OnBikeCalledAction?.Invoke();
+   }
+
+   private void OnCarCallButtonClicked()
+   {
+      Actions.OnCarCalledAction?.Invoke();
+   }
+
+   private void ToggleMobileScreen()
+   {
+      isMobileScreenActive = !isMobileScreenActive;
+      bigMobileScreen.gameObject.SetActive(isMobileScreenActive);
    }
 
    private void UpdateMoneyText(int obj)

@@ -28,5 +28,9 @@ namespace Utilities
         public static Action<int> OnDecreaseTimeAction;
         public static Action OnStartTimeAction;
         public static Action OnStopTimeAction;
+        
+        //Car/Bike
+        public static Action OnCarCalledAction;
+        public static Action OnBikeCalledAction;
     }
 }
