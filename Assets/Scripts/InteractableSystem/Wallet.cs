@@ -63,16 +63,18 @@ namespace InteractableSystem
                 Actions.OnIncreaseEnergyAction?.Invoke(energyChange);
             else if(energyChange < 0)
                 Actions.OnDecreaseEnergyAction?.Invoke(energyChange);
-            
-            if(moneyChange > 0)
-                Actions.OnIncreaseMoneyAction?.Invoke(energyChange);
+
+            if (moneyChange > 0)
+            {
+                Actions.OnIncreaseMoneyAction?.Invoke(moneyChange);
+            }
             else if(moneyChange < 0)
-                Actions.OnDecreaseMoneyAction?.Invoke(energyChange);
+                Actions.OnDecreaseMoneyAction?.Invoke(moneyChange);
             
             if(timeChange > 0)
-                Actions.OnIncreaseTimeAction?.Invoke(energyChange);
+                Actions.OnIncreaseTimeAction?.Invoke(timeChange);
             else if(timeChange < 0)
-                Actions.OnDecreaseTimeAction?.Invoke(energyChange);
+                Actions.OnDecreaseTimeAction?.Invoke(timeChange);
             gameObject.SetActive(false);
         }
     }
