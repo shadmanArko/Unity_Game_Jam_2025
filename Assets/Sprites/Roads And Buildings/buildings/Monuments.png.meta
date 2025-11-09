@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: e4994232256dc754294a13877aecdaa8
+guid: 91ddcb4985e459e49bcd7c17ddede21c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8550442700605770261
-    second: WASHING MACHINE_0
+      213: -3609470833568670580
+    second: Monuments_0
+  - first:
+      213: 6176959574803005061
+    second: Monuments_1
+  - first:
+      213: 3213824485924960261
+    second: Monuments_2
+  - first:
+      213: -7579564043287391432
+    second: Monuments_3
+  - first:
+      213: -7120159634020029305
+    second: Monuments_4
+  - first:
+      213: 2223378094145887834
+    second: Monuments_5
+  - first:
+      213: 7108608970675685669
+    second: Monuments_6
+  - first:
+      213: -4391994706247423458
+    second: Monuments_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +93,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -126,133 +147,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WASHING MACHINE_0
+      name: Monuments_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
-        height: 31
+        width: 3448
+        height: 294
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51a40f1855649a670800000000000000
-      internalID: 8550442700605770261
+      spriteID: c8c9102966598edc0800000000000000
+      internalID: -3609470833568670580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WASHING MACHINE_1
+      name: Monuments_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 0
-        width: 31
-        height: 31
+        x: 171
+        y: 195
+        width: 73
+        height: 99
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 65b22cf134bad8547b00fae2fcf3dc2b
-      internalID: -1615817671
+      spriteID: 58eb410a108f8b550800000000000000
+      internalID: 6176959574803005061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WASHING MACHINE_2
+      name: Monuments_2
       rect:
         serializedVersion: 2
-        x: 62
-        y: 0
-        width: 31
-        height: 31
+        x: 835
+        y: 195
+        width: 94
+        height: 99
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ce7ef8343e17b9a4899da38ee5fad87e
-      internalID: -46203695
+      spriteID: 5087206a75cc99c20800000000000000
+      internalID: 3213824485924960261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WASHING MACHINE_3
+      name: Monuments_3
       rect:
         serializedVersion: 2
-        x: 93
-        y: 0
-        width: 31
-        height: 31
+        x: 932
+        y: 195
+        width: 287
+        height: 99
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2295bd94bd72f604f93d24d13200b7bc
-      internalID: 1406040681
+      spriteID: 833188f29aaffc690800000000000000
+      internalID: -7579564043287391432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WASHING MACHINE_4
+      name: Monuments_4
       rect:
         serializedVersion: 2
-        x: 124
-        y: 0
-        width: 31
-        height: 31
+        x: 3092
+        y: 195
+        width: 279
+        height: 99
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3ba21f087ca34f046aaeb1fc783cf258
-      internalID: 92036793
+      spriteID: 78c292e798c103d90800000000000000
+      internalID: -7120159634020029305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WASHING MACHINE_5
+      name: Monuments_5
       rect:
         serializedVersion: 2
-        x: 155
+        x: 290
         y: 0
-        width: 31
-        height: 31
+        width: 94
+        height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: deef4efeb5538d84d80af8d88bc77216
-      internalID: -195886653
+      spriteID: a5e53feb8960bde10800000000000000
+      internalID: 2223378094145887834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monuments_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 124
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5298740223ad6a260800000000000000
+      internalID: 7108608970675685669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monuments_7
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 0
+        width: 134
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ae9be95108c03c0800000000000000
+      internalID: -4391994706247423458
       vertices: []
       indices: 
       edges: []
@@ -261,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -269,16 +334,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":31.0,"y":31.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      WASHING MACHINE_0: 8550442700605770261
-      WASHING MACHINE_1: -1615817671
-      WASHING MACHINE_2: -46203695
-      WASHING MACHINE_3: 1406040681
-      WASHING MACHINE_4: 92036793
-      WASHING MACHINE_5: -195886653
+      Monuments_0: -3609470833568670580
+      Monuments_1: 6176959574803005061
+      Monuments_2: 3213824485924960261
+      Monuments_3: -7579564043287391432
+      Monuments_4: -7120159634020029305
+      Monuments_5: 2223378094145887834
+      Monuments_6: 7108608970675685669
+      Monuments_7: -4391994706247423458
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
