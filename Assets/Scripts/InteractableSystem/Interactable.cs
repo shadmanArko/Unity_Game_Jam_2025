@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Life;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +8,7 @@ namespace InteractableSystem
     public abstract class Interactable : MonoBehaviour, IInteractable
     {
         public GameObject interactablePopUp;
+        public GameObject sliderCanvas;
         public bool isInteractable;
         public bool isShowingPopUp;
         
@@ -48,6 +48,7 @@ namespace InteractableSystem
         
         protected async Task FillSliderOverTimeAsync(float duration)
         {
+            sliderCanvas.SetActive(true);
             timeToFinishSlider.value = 0f;
             timeToFinishSlider.maxValue = 1f;
 
@@ -62,6 +63,7 @@ namespace InteractableSystem
             }
             
             timeToFinishSlider.value = 1f;
+            sliderCanvas.SetActive(false);
         }
 
     }

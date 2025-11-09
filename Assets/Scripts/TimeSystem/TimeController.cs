@@ -58,13 +58,13 @@ namespace TimeSystem
 
         private void IncreaseTime(int value)
         {
-            time -= value;
+            time -= value * 2;
             UpdateTimeText();
         }
 
         private void DecreaseTime(int value)
         {
-            time += value;
+            time += value * 2;
             UpdateTimeText();
         }
         

@@ -5,8 +5,12 @@ using Utilities;
 
 namespace InteractableSystem
 {
-    public class BedInteractable : Interactable
+    public class FridgeInteractable : Interactable
     {
+        [SerializeField] private SpriteRenderer spriteRend;
+        [SerializeField] private Sprite fridgeOpenSprite;
+        [SerializeField] private Sprite fridgeCloseSprite;
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             if(!other.gameObject.CompareTag("Player")) return;
@@ -33,13 +37,13 @@ namespace InteractableSystem
         public override async void Interact(SimplePlayerController player)
         {
             if(!IsInteractable) return;
-        
+            spriteRend.sprite = fridgeOpenSprite;
             player.DisableMovement();
             await FillSliderOverTimeAsync(timeToFinishTask);
             OnInteractionComplete();
             player.EnableMovement();
             await Task.Delay(500);
-            
+            spriteRend.sprite = fridgeCloseSprite;
         }
 
         public override void OnInteractionComplete()
