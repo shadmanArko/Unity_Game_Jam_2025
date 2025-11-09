@@ -1,6 +1,7 @@
 using System.Collections;
 using Life;
 using UnityEngine;
+using Utilities;
 
 public class Manhole : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class Manhole : MonoBehaviour
         {
             playerController.transform.position = transform.position + new Vector3(2, 1, 0); // Move player above the manhole
             playerController.EnableObject(); // Assuming you have this method
+            Actions.OnDecreaseTimeAction ?.Invoke(15); // Decrease time by 5 seconds
         }
     }
 }

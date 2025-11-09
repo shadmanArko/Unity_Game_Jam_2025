@@ -32,5 +32,6 @@ namespace Utilities
         //Car/Bike
         public static Action OnCarCalledAction;
         public static Action OnBikeCalledAction;
+        public static Action<bool> OnPlayerDroppedOff;
     }
 }
