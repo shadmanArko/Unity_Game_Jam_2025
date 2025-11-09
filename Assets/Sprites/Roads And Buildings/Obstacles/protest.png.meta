@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 1cf26e731e0d7864e9b8f992d017aecd
+guid: 0c7c1b2089f1eaa4fb9cf5ce10af3d47
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -564205962969710636
-    second: NOTIFICATION_0
+      213: 7292052757474519434
+    second: protest_0
+  - first:
+      213: 7792554285900900367
+    second: protest_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NOTIFICATION_0
+      name: protest_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 8
+        width: 285
+        height: 139
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4df780d7aa98b28f0800000000000000
-      internalID: -564205962969710636
+      spriteID: a892da41953923560800000000000000
+      internalID: 7292052757474519434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: protest_1
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 0
+        width: 285
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08221816d6b42c60800000000000000
+      internalID: 7792554285900900367
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6b4a9ba4da3ee154c8519abe1f114c64
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +158,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":285.0,"y":139.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      NOTIFICATION_0: -564205962969710636
+      protest_0: 7292052757474519434
+      protest_1: 7792554285900900367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
