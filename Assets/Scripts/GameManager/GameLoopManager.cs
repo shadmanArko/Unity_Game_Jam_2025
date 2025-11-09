@@ -10,7 +10,8 @@ namespace GameManager
     {
         [SerializeField] private Transform spawnPosition;
 
-        [Header("Extras")] [SerializeField] private BedInteractable bed;
+        [Header("Extras")] 
+        [SerializeField] private BedInteractable bed;
 
         private void Awake()
         {
@@ -30,8 +31,9 @@ namespace GameManager
 
         private async void TimeRunsOut()
         {
+            Debug.LogError($"Time Ended");
             GameReference.instance.playerController.canMove = false;
-            FadeManager.Instance.gameObject.SetActive(true);
+            FadeManager.Instance.EnableFadeCanvas();
             StartCoroutine(FadeManager.Instance.FadeIn());
             await Task.Delay(2000);
             GameReference.instance.notificationCanvasController

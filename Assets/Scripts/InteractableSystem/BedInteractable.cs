@@ -15,12 +15,16 @@ namespace InteractableSystem
         {
             base.Start();
             IsInteractable = false;
+
+            energyChange = 10;
+            moneyChange = 0;
+            timeChange = 30;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if(!other.gameObject.CompareTag("Player")) return;
-            if(!isInteractable) return;
+            if(!IsInteractable) return;
             ShowInteractPopUp();
             IsInteractable = true;
         }
@@ -48,10 +52,12 @@ namespace InteractableSystem
             
             player.DisableMovement();
             player.DisableObject();
+            spriteRenderer.sprite = sleepSprite;
             await FillSliderOverTimeAsync(timeToFinishTask);
             OnInteractionComplete();
             player.EnableMovement();
             await Task.Delay(500);
+            spriteRenderer.sprite = wakeUpSprite;
             player.EnableMovement();
             player.EnableObject();
         }

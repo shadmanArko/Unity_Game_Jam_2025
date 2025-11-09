@@ -21,6 +21,8 @@ namespace Utilities
         public SimplePlayerController playerController;
         public SideScrollingCameraController cameraController;
         public NotificationCanvasController notificationCanvasController;
+
+        [Header("Managers")] public CurrencyManager currencyManager;
         
         // GameObjects
         [Header("GamObjects")]

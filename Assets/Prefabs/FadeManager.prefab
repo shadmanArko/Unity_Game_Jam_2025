@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1798908364855717393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FadeManager
   fadeImage: {fileID: 1105970047135254590}
   fadeDuration: 1
+  fadeCanvas: {fileID: 4406860175054523251}
 --- !u!1 &7885936842022914545
 GameObject:
   m_ObjectHideFlags: 0

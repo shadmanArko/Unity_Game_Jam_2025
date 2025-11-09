@@ -32,6 +32,7 @@ namespace TimeSystem
         private void Awake()
         {
             isTimeRunning = false;
+            time = 0f;
         }
 
         private void Start()
@@ -46,13 +47,13 @@ namespace TimeSystem
         private void InitializeTime()
         {
             isTimeRunning = true;
-            initialTime = 0;
-            finalTime = 240;
+            // initialTime = 0;
+            finalTime = 120;
 
             secondsPerMinuteTimer = 0f;
 
             initialTimeSpan = new TimeSpan(0, 7, 0);
-            time = initialTime;
+            // time = initialTime;
             timePanel.SetActive(true);
         }
 
