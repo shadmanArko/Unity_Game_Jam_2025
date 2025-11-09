@@ -16,15 +16,21 @@ namespace Utilities
         // Money
         public static Action<int> OnIncreaseMoneyAction;
         public static Action<int> OnDecreaseMoneyAction;
+        public static Action<int> OnMoneyChangedTo;
         
         // Energy
         public static Action<int> OnIncreaseEnergyAction;
         public static Action<int> OnDecreaseEnergyAction;
+        public static Action<int> OnEnergyChangedTo;
         
         // Time
         public static Action<int> OnIncreaseTimeAction;
         public static Action<int> OnDecreaseTimeAction;
         public static Action OnStartTimeAction;
         public static Action OnStopTimeAction;
+        
+        //Car/Bike
+        public static Action OnCarCalledAction;
+        public static Action OnBikeCalledAction;
     }
 }
