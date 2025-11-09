@@ -47,7 +47,7 @@ namespace TimeSystem
         {
             isTimeRunning = true;
             initialTime = 0;
-            finalTime = 360;
+            finalTime = 240;
 
             secondsPerMinuteTimer = 0f;
 

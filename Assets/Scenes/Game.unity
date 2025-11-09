@@ -637,63 +637,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7290241764726767893, guid: efce89f087fb99341afe9e2261006d3b, type: 3}
   m_PrefabInstance: {fileID: 1788197810}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1703132526
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1900893139947910306, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900893139947910306, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900893139947910306, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900893139947910306, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900893139947910306, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900893139947910306, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900893139947910306, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900893139947910306, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900893139947910306, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900893139947910306, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2479056185316548164, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
-      propertyPath: m_Name
-      value: BedInteractable
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 256ff54c991c7f44a961d2ae2f2c628f, type: 3}
 --- !u!4 &1730812680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6040880723271793082, guid: 4606db68398fc214cbff6f2320f91519, type: 3}
@@ -911,9 +854,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1968030013}
   - component: {fileID: 1968030012}
-  - component: {fileID: 1968030011}
   - component: {fileID: 1968030010}
   - component: {fileID: 1968030009}
+  - component: {fileID: 1968030014}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -995,14 +938,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!81 &1968030011
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968030008}
-  m_Enabled: 1
 --- !u!20 &1968030012
 Camera:
   m_ObjectHideFlags: 0
@@ -1070,6 +1005,20 @@ Transform:
   - {fileID: 368505334}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1968030014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968030008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!224 &2022931144 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6898449296887690445, guid: 785cb2b1ffeebef4b8f854fd4116b3f7, type: 3}
@@ -1473,4 +1422,3 @@ SceneRoots:
   - {fileID: 2135602968}
   - {fileID: 215392157}
   - {fileID: 1300351520}
-  - {fileID: 1703132526}
