@@ -36,17 +36,17 @@ namespace SoundSystem
 
         void Awake()
         {
-            // // Singleton pattern
-            // if (Instance == null)
-            // {
-            //     Instance = this;
-            //     DontDestroyOnLoad(gameObject);
-            //     InitializeAudio();
-            // }
-            // else
-            // {
-            //     Destroy(gameObject);
-            // }
+            // Singleton pattern
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+                //InitializeAudio();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         // void InitializeAudio()
