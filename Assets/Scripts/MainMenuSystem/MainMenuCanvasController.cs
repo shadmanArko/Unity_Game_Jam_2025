@@ -12,7 +12,7 @@ namespace MainMenuSystem
         private void Start()
         {
             snoozeButton.onClick.AddListener(OnPressSnoozeButton);
-            SoundManager.Instance.PlaySFX("alarm");
+            SoundManager.Instance.PlayEnemyOneShot($"alarm", transform.position);
         }
 
         private void OnPressSnoozeButton()

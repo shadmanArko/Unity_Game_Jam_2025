@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SoundSystem
 {
@@ -11,7 +12,7 @@ namespace SoundSystem
         public class SFXEntry
         {
             public string key;
-            public EventReference eventPath;
+            [FormerlySerializedAs("eventPath")] public EventReference eventReference;
         }
 
         public List<SFXEntry> sfxList = new List<SFXEntry>();
@@ -23,9 +24,9 @@ namespace SoundSystem
             sfxDictionary = new Dictionary<string, EventReference>();
             foreach (var entry in sfxList)
             {
-                if (!string.IsNullOrEmpty(entry.key) && !entry.eventPath.IsNull)
+                if (!string.IsNullOrEmpty(entry.key) && !entry.eventReference.IsNull)
                 {
-                    sfxDictionary[entry.key] = entry.eventPath;
+                    sfxDictionary[entry.key] = entry.eventReference;
                 }
             }
         }
