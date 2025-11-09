@@ -41,11 +41,13 @@ public class GameplayCanvas : MonoBehaviour
    private void OnBikeCallButtonClicked()
    {
       Actions.OnBikeCalledAction?.Invoke();
+      ToggleMobileScreen();
    }
 
    private void OnCarCallButtonClicked()
    {
       Actions.OnCarCalledAction?.Invoke();
+      ToggleMobileScreen();
    }
 
    private void ToggleMobileScreen()
