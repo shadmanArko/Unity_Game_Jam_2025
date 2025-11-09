@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
+using Random = System.Random;
 
 public class GameplayCanvas : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class GameplayCanvas : MonoBehaviour
    public Image bigMobileScreen;
    public Button callCarButton;
    public Button callBikeButton;
+
+   public Image msgPopUpPanel;
+   public TextMeshProUGUI msgPopUpText;
+   public TextMeshProUGUI bigScreenMsgPopUpText;
+   public Image notificationImage;
+   public bool hasNotification = false;
    private bool isMobileScreenActive = false;
    private int currentMoney = 0;
    private void OnEnable()
@@ -36,6 +43,19 @@ public class GameplayCanvas : MonoBehaviour
    private void OnPlayerEnteredRoadChunkIndex(int obj)
    {
       currentChunkIndex = obj;
+      if (obj >= 4 )
+      {
+         BossMessageDecreasesTime("Come by earlier today", UnityEngine.Random.Range(10, 30));
+      }
+   }
+
+   private void BossMessageDecreasesTime(string text, float f)
+   {
+      hasNotification = true;
+      notificationImage.gameObject.SetActive(true);
+      msgPopUpPanel.gameObject.SetActive(true);
+      msgPopUpText.text = text;
+      bigScreenMsgPopUpText.text = text;
    }
 
    private void OnBikeCallButtonClicked()
@@ -52,6 +72,11 @@ public class GameplayCanvas : MonoBehaviour
 
    private void ToggleMobileScreen()
    {
+      if (hasNotification)
+      {
+         hasNotification = false;
+         notificationImage.gameObject.SetActive(false);
+      }
       isMobileScreenActive = !isMobileScreenActive;
       bigMobileScreen.gameObject.SetActive(isMobileScreenActive);
    }
