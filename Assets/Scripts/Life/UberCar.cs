@@ -30,6 +30,7 @@ namespace Life
         [SerializeField] private float pickupRadius = 2f;
         [SerializeField] private float waitTimeBeforeStart = 1f;
 
+        private Animator _animator;
         public enum CarState
         {
             Idle,
@@ -57,6 +58,8 @@ namespace Life
             {
                 obstacleLayer = LayerMask.GetMask("Default");
             }
+
+            _animator = GetComponent<Animator>();
         }
     
         void Update()
@@ -303,6 +306,7 @@ namespace Life
                 {
                     playerController.DisableObject();
                     Actions.OnCameraTargetTransformChanged?.Invoke(transform);
+                    _animator.SetTrigger("OnPassangerBoard");
                 }
             }
         }
@@ -351,6 +355,7 @@ namespace Life
                     playerController.transform.position = transform.position + Vector3.up * 2f;
                     playerController.EnableObject();
                     Actions.OnCameraTargetTransformChanged?.Invoke(playerController.transform);
+                    _animator.SetTrigger("OnPassangerLeft");
                 }
             }
         }
