@@ -225,6 +225,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1272106351}
     m_Modifications:
+    - target: {fileID: 4080134002207067930, guid: 1d06cf43c838bf0429a8c7e1f7655ce6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6093674858307547058, guid: 1d06cf43c838bf0429a8c7e1f7655ce6, type: 3}
       propertyPath: m_Name
       value: Tong (1)
@@ -564,6 +568,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1272106351}
     m_Modifications:
+    - target: {fileID: 4080134002207067930, guid: 1d06cf43c838bf0429a8c7e1f7655ce6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6093674858307547058, guid: 1d06cf43c838bf0429a8c7e1f7655ce6, type: 3}
       propertyPath: m_Name
       value: Tong (2)
@@ -1013,6 +1021,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3838365327773345507, guid: 34cdc9ba3fd674341a9224bbfe97a2bd, type: 3}
+      propertyPath: 'roadBlockerObstacles.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1359973094451454926, guid: f370b34804cb4944195ecb849d35aa34, type: 3}
+    - target: {fileID: 3838365327773345507, guid: 34cdc9ba3fd674341a9224bbfe97a2bd, type: 3}
+      propertyPath: 'roadBlockerObstacles.Array.data[7]'
+      value: 
+      objectReference: {fileID: 8385978236442371735, guid: 5d539c0e621dec7418fb73b142df6208, type: 3}
     - target: {fileID: 4115728258228772408, guid: 34cdc9ba3fd674341a9224bbfe97a2bd, type: 3}
       propertyPath: m_Name
       value: ObstacleSpawner
@@ -1292,6 +1308,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1272106351}
     m_Modifications:
+    - target: {fileID: 4080134002207067930, guid: 1d06cf43c838bf0429a8c7e1f7655ce6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6093674858307547058, guid: 1d06cf43c838bf0429a8c7e1f7655ce6, type: 3}
       propertyPath: m_Name
       value: Tong

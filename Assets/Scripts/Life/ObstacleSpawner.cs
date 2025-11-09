@@ -48,11 +48,23 @@ public class ObstacleSpawner : MonoBehaviour
                 }
                 else
                 {
-                    var obstacle = GameObject.Instantiate(roadBlockerObstacles[UnityEngine.Random.Range(0, roadBlockerObstacles.Count)],
-                        targetChunk.transform.position,
-                        Quaternion.identity);
+                    if (chunkIndex <= 1)
+                    {
+                        var obstacle = GameObject.Instantiate(roadBlockerObstacles[UnityEngine.Random.Range(0, roadBlockerObstacles.Count-3)],
+                            targetChunk.transform.position,
+                            Quaternion.identity);
+                        spawnedObstacles.Add(obstacle);
+
+                    }
+                    else
+                    {
+                        var obstacle = GameObject.Instantiate(roadBlockerObstacles[UnityEngine.Random.Range(0, roadBlockerObstacles.Count)],
+                            targetChunk.transform.position,
+                            Quaternion.identity);
                     
-                    spawnedObstacles.Add(obstacle);
+                        spawnedObstacles.Add(obstacle);
+                    }
+                    
                 }
                 
             }
