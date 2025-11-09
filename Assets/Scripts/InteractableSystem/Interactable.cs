@@ -23,6 +23,7 @@ namespace InteractableSystem
         public virtual void Start()
         {
             IsInteractable = isInteractable;
+            timeChange = -15;
         }
         
         public virtual void ShowInteractPopUp()

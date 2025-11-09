@@ -29,7 +29,7 @@ public class ObstacleSpawner : MonoBehaviour
             probability = 1;
         }
         var targetChunkIndex = chunkIndex+1;
-        if (isMovingForward && probability < obstacleSpawnProbability)
+        if ((isMovingForward && probability < obstacleSpawnProbability) || chunkIndex>8)
         {
             // Spawn obstacle in this chunk
             RoadChunk targetChunk = roadChunks.Find(chunk => chunk.chunkIndex == targetChunkIndex);

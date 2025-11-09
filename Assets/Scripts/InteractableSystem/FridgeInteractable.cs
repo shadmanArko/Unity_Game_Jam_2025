@@ -62,10 +62,10 @@ namespace InteractableSystem
             else if(moneyChange < 0)
                 Actions.OnDecreaseMoneyAction?.Invoke(energyChange);
             
-            if(timeChange > 0)
-                Actions.OnIncreaseTimeAction?.Invoke(energyChange);
-            else if(timeChange < 0)
-                Actions.OnDecreaseTimeAction?.Invoke(energyChange);
+            if(timeChange < 0)
+                Actions.OnIncreaseTimeAction?.Invoke(timeChange);
+            else if(timeChange > 0)
+                Actions.OnDecreaseTimeAction?.Invoke(timeChange);
         }
     }
 }

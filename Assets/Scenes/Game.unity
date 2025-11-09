@@ -544,6 +544,8 @@ MonoBehaviour:
   maxEnergy: 100
   startingEnergy: 60
   startingMoney: 0
+  currentEnergy: 0
+  currentMoney: 0
 --- !u!4 &788311989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7696079478857955135, guid: 8f6b4ecd725a2a6479a87667219e51bd, type: 3}
@@ -914,6 +916,10 @@ PrefabInstance:
       propertyPath: maxX
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 7906316732592577745, guid: ad6fafc312ad8934ca287b0f44b1da20, type: 3}
+      propertyPath: energyDecreaseRate
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8709100626063288371, guid: ad6fafc312ad8934ca287b0f44b1da20, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1007,18 +1013,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3838365327773345507, guid: 34cdc9ba3fd674341a9224bbfe97a2bd, type: 3}
-      propertyPath: obstacleSpawnProbability
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838365327773345507, guid: 34cdc9ba3fd674341a9224bbfe97a2bd, type: 3}
-      propertyPath: 'officeBlockerObjects.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2288997584492570576, guid: ad9efb43509319b41844193ef72cb02e, type: 3}
-    - target: {fileID: 3838365327773345507, guid: 34cdc9ba3fd674341a9224bbfe97a2bd, type: 3}
-      propertyPath: 'roadBlockerObstacles.Array.data[4]'
-      value: 
-      objectReference: {fileID: 8385978236442371735, guid: 5d539c0e621dec7418fb73b142df6208, type: 3}
     - target: {fileID: 4115728258228772408, guid: 34cdc9ba3fd674341a9224bbfe97a2bd, type: 3}
       propertyPath: m_Name
       value: ObstacleSpawner

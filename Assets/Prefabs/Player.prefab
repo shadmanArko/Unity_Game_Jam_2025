@@ -164,6 +164,8 @@ MonoBehaviour:
   moveSpeed: 3
   useXBounds: 1
   canMove: 0
+  energyDecreaseRate: 3
+  energyDecreaseInterval: 2
   minX: -28
   maxX: 48.5
   useYBounds: 1

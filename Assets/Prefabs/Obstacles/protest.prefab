@@ -263,5 +263,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefc39a400d7484498c879cc670aec9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  protestDuration: 8
+  protestDuration: 24
   moveSpeed: 2

@@ -49,8 +49,11 @@ MonoBehaviour:
   - {fileID: 4422718265459347750, guid: 4d88ce4f7769e6a469636a6abef1d30b, type: 3}
   - {fileID: 4422718265459347750, guid: 0df37732da6a0be4fbb8f5f03ca47b69, type: 3}
   - {fileID: 1359973094451454926, guid: f370b34804cb4944195ecb849d35aa34, type: 3}
-  - {fileID: 4849956599889316191, guid: 41d3dd30ba06f564dbdab171f347bbce, type: 3}
+  - {fileID: 8385978236442371735, guid: 5d539c0e621dec7418fb73b142df6208, type: 3}
+  - {fileID: 8385978236442371735, guid: 5d539c0e621dec7418fb73b142df6208, type: 3}
+  - {fileID: 8385978236442371735, guid: 5d539c0e621dec7418fb73b142df6208, type: 3}
+  - {fileID: 1359973094451454926, guid: f370b34804cb4944195ecb849d35aa34, type: 3}
   officeBlockerObjects:
-  - {fileID: 2793638002524223528, guid: 0f4762f95679f45409178f8e2cc8642f, type: 3}
-  - {fileID: 4849956599889316191, guid: 44da37839df929a4082de9b5482b704e, type: 3}
-  obstacleSpawnProbability: 0.5
+  - {fileID: 3109242911452849644, guid: 18382a93ca594e441a613b79cc659822, type: 3}
+  - {fileID: 2288997584492570576, guid: ad9efb43509319b41844193ef72cb02e, type: 3}
+  obstacleSpawnProbability: 1

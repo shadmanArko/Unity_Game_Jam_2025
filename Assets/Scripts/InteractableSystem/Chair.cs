@@ -17,7 +17,7 @@ namespace InteractableSystem
 
             moneyChange = 0;
             energyChange = 30;
-            timeChange = -10;
+            timeChange = -30;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -69,9 +69,9 @@ namespace InteractableSystem
             else if(moneyChange < 0)
                 Actions.OnDecreaseMoneyAction?.Invoke(moneyChange);
             
-            if(timeChange > 0)
+            if(timeChange < 0)
                 Actions.OnIncreaseTimeAction?.Invoke(timeChange);
-            else if(timeChange < 0)
+            else if(timeChange > 0)
                 Actions.OnDecreaseTimeAction?.Invoke(timeChange);
         }
     }
