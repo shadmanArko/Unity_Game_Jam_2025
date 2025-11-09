@@ -16,11 +16,11 @@ namespace Life
         [SerializeField] private float maxY = 2f;
     
         [Header("Obstacle Avoidance")]
-        [SerializeField] private float detectionDistance = 3f;
-        [SerializeField] private float detectionWidth = 0.8f;
+        [SerializeField] private float earlyAvoidanceDistance = 5f;
+        [SerializeField] private float detectionWidth = 1f;
         [SerializeField] private LayerMask obstacleLayer;
-        [SerializeField] private float avoidanceOffset = 1f;
-        [SerializeField] private float earlyAvoidanceDistance = 5f; // Start avoiding earlier
+        [SerializeField] private float avoidanceOffset = 1.5f;
+        [SerializeField] private float safetyMargin = 0.3f; // Extra margin from obstacles
     
         [Header("References")]
         [SerializeField] private Transform player;
@@ -45,10 +45,12 @@ namespace Life
         private float waitTimer = 0f;
         private float targetY;
         private bool isAvoidingObstacle = false;
+        private float lastAvoidanceCheckY;
     
         void Start()
         {
             targetY = transform.position.y;
+            lastAvoidanceCheckY = transform.position.y;
         
             // If obstacle layer not set, try to find it
             if (obstacleLayer == 0)
@@ -100,6 +102,7 @@ namespace Life
         
             // Set initial target Y to current Y
             targetY = transform.position.y;
+            lastAvoidanceCheckY = transform.position.y;
         
             currentState = CarState.ComingToPlayer;
         
@@ -136,101 +139,118 @@ namespace Life
     
         private void CheckAndAvoidObstacles(bool checkReverse)
         {
-            // Cast a ray in the direction of movement
             Vector3 rayOrigin = transform.position;
             Vector3 rayDirection = checkReverse ? Vector3.left : Vector3.right;
-        
-            // Use early avoidance distance for detection
             float checkDistance = earlyAvoidanceDistance;
         
-            // Draw debug rays
-            Debug.DrawRay(rayOrigin, rayDirection * checkDistance, Color.red);
-            Debug.DrawRay(rayOrigin + Vector3.up * detectionWidth, rayDirection * checkDistance, Color.yellow);
-            Debug.DrawRay(rayOrigin + Vector3.down * detectionWidth, rayDirection * checkDistance, Color.yellow);
-        
-            // Check for obstacles ahead with longer distance
-            RaycastHit2D centerHit = Physics2D.Raycast(rayOrigin, rayDirection, checkDistance, obstacleLayer);
-            RaycastHit2D upperHit = Physics2D.Raycast(rayOrigin + Vector3.up * detectionWidth, rayDirection, checkDistance, obstacleLayer);
-            RaycastHit2D lowerHit = Physics2D.Raycast(rayOrigin + Vector3.down * detectionWidth, rayDirection, checkDistance, obstacleLayer);
-        
-            RaycastHit2D obstacleHit = new RaycastHit2D();
-            bool obstacleDetected = false;
-        
-            // Check if any hit an obstacle and get the closest one
-            if (centerHit.collider != null && centerHit.collider.CompareTag("Obstacle"))
-            {
-                obstacleDetected = true;
-                obstacleHit = centerHit;
-            }
-            if (upperHit.collider != null && upperHit.collider.CompareTag("Obstacle"))
-            {
-                if (!obstacleDetected || upperHit.distance < obstacleHit.distance)
-                {
-                    obstacleDetected = true;
-                    obstacleHit = upperHit;
-                }
-            }
-            if (lowerHit.collider != null && lowerHit.collider.CompareTag("Obstacle"))
-            {
-                if (!obstacleDetected || lowerHit.distance < obstacleHit.distance)
-                {
-                    obstacleDetected = true;
-                    obstacleHit = lowerHit;
-                }
-            }
-        
-            if (obstacleDetected)
-            {
-                isAvoidingObstacle = true;
+            // Multiple detection rays at different heights for better coverage
+            int rayCount = 5;
+            float heightStep = (detectionWidth * 2f) / (rayCount - 1);
             
-                // Get obstacle position
-                float obstacleY = obstacleHit.collider.transform.position.y;
+            RaycastHit2D closestObstacle = new RaycastHit2D();
+            float closestDistance = Mathf.Infinity;
+            bool obstacleFound = false;
+        
+            // Cast multiple rays for better detection
+            for (int i = 0; i < rayCount; i++)
+            {
+                float yOffset = -detectionWidth + (i * heightStep);
+                Vector3 rayStart = rayOrigin + Vector3.up * yOffset;
+                
+                RaycastHit2D hit = Physics2D.Raycast(rayStart, rayDirection, checkDistance, obstacleLayer);
+                
+                // Debug visualization
+                Color rayColor = hit.collider != null && hit.collider.CompareTag("Obstacle") ? Color.red : Color.green;
+                Debug.DrawRay(rayStart, rayDirection * checkDistance, rayColor);
+                
+                if (hit.collider != null && hit.collider.CompareTag("Obstacle"))
+                {
+                    if (hit.distance < closestDistance)
+                    {
+                        closestDistance = hit.distance;
+                        closestObstacle = hit;
+                        obstacleFound = true;
+                    }
+                }
+            }
+        
+            if (obstacleFound)
+            {
+                float obstacleY = closestObstacle.collider.bounds.center.y;
+                float obstacleHeight = closestObstacle.collider.bounds.size.y;
                 float currentY = transform.position.y;
-            
-                // Smart avoidance: go opposite direction from obstacle
-                // If obstacle is higher, go lower. If obstacle is lower, go higher.
+                
+                // Determine best avoidance direction
+                float obstacleTop = obstacleY + (obstacleHeight / 2f) + safetyMargin;
+                float obstacleBottom = obstacleY - (obstacleHeight / 2f) - safetyMargin;
+                
+                // Smart avoidance logic
+                bool canGoUp = (currentY + avoidanceOffset) <= maxY;
+                bool canGoDown = (currentY - avoidanceOffset) >= minY;
+                
+                // If obstacle is higher than car, prefer going down (lower Y)
                 if (obstacleY > currentY)
                 {
-                    // Obstacle is above, move down
-                    targetY = currentY - avoidanceOffset;
-                
-                    // Make sure we have enough space
-                    if (targetY < minY)
+                    if (canGoDown)
                     {
-                        // Can't go down enough, try going up instead
-                        targetY = currentY + avoidanceOffset;
+                        targetY = obstacleBottom - avoidanceOffset;
+                        isAvoidingObstacle = true;
+                    }
+                    else if (canGoUp)
+                    {
+                        // Can't go down, must go up
+                        targetY = obstacleTop + avoidanceOffset;
+                        isAvoidingObstacle = true;
                     }
                 }
+                // If obstacle is lower than car, prefer going up (higher Y)
                 else
                 {
-                    // Obstacle is below or at same level, move up
-                    targetY = currentY + avoidanceOffset;
-                
-                    // Make sure we have enough space
-                    if (targetY > maxY)
+                    if (canGoUp)
                     {
-                        // Can't go up enough, try going down instead
-                        targetY = currentY - avoidanceOffset;
+                        targetY = obstacleTop + avoidanceOffset;
+                        isAvoidingObstacle = true;
+                    }
+                    else if (canGoDown)
+                    {
+                        // Can't go up, must go down
+                        targetY = obstacleBottom - avoidanceOffset;
+                        isAvoidingObstacle = true;
                     }
                 }
-            
-                // Clamp target Y within road bounds
+                
+                // Clamp to road bounds
                 targetY = Mathf.Clamp(targetY, minY, maxY);
-            
-                Debug.DrawLine(transform.position, obstacleHit.point, Color.magenta);
+                lastAvoidanceCheckY = targetY;
+                
+                // Visual feedback
+                Debug.DrawLine(transform.position, closestObstacle.point, Color.magenta);
+                Debug.DrawLine(rayOrigin, new Vector3(rayOrigin.x, targetY, rayOrigin.z), Color.cyan);
             }
             else
             {
-                // No obstacle, return to center lane gradually
+                // No obstacle detected - gradually return to center
                 if (isAvoidingObstacle)
                 {
+                    // Check if we're clear of obstacles before returning to center
                     float centerY = (minY + maxY) / 2f;
-                    targetY = Mathf.MoveTowards(targetY, centerY, Time.deltaTime * 0.5f);
-                
-                    // Check if back to center
-                    if (Mathf.Abs(transform.position.y - centerY) < 0.1f)
+                    
+                    // Only return to center if we're far from last avoidance
+                    if (Mathf.Abs(transform.position.y - lastAvoidanceCheckY) > 0.2f)
                     {
-                        isAvoidingObstacle = false;
+                        targetY = Mathf.MoveTowards(targetY, centerY, laneChangeSpeed * Time.deltaTime * 0.3f);
+                        
+                        // Reset avoidance flag when close to center
+                        if (Mathf.Abs(targetY - centerY) < 0.2f)
+                        {
+                            isAvoidingObstacle = false;
+                        }
+                    }
+                    else
+                    {
+                        // Still in avoidance maneuver
+                        float returnSpeed = laneChangeSpeed * Time.deltaTime * 0.5f;
+                        targetY = Mathf.MoveTowards(targetY, centerY, returnSpeed);
                     }
                 }
             }
@@ -293,10 +313,9 @@ namespace Life
             CheckAndAvoidObstacles(false);
         
             // Determine target X position
-            float targetX;
             if (destinationTarget != null)
             {
-                targetX = destinationTarget.position.x;
+                float targetX = destinationTarget.position.x;
             
                 // Check if reached destination
                 float distanceX = Mathf.Abs(transform.position.x - targetX);
@@ -329,7 +348,7 @@ namespace Life
                 var playerController = player.GetComponent<SimplePlayerController>();
                 if (playerController != null)
                 {
-                    playerController.transform.position = transform.position + Vector3.up * 2f; // Place player next to car
+                    playerController.transform.position = transform.position + Vector3.up * 2f;
                     playerController.EnableObject();
                     Actions.OnCameraTargetTransformChanged?.Invoke(playerController.transform);
                 }
@@ -346,11 +365,11 @@ namespace Life
             isReversing = false;
             isAvoidingObstacle = false;
             targetY = transform.position.y;
+            lastAvoidanceCheckY = transform.position.y;
         }
     
         private void UpdateSpriteDirection(float directionX)
         {
-            // Flip sprite based on movement direction
             SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
             if (spriteRenderer != null)
             {
@@ -400,6 +419,8 @@ namespace Life
             Gizmos.color = Color.red;
             Vector3 detectionDir = isReversing ? Vector3.left : Vector3.right;
             Gizmos.DrawLine(transform.position, transform.position + detectionDir * earlyAvoidanceDistance);
+            
+            // Draw detection width
             Gizmos.DrawLine(transform.position + Vector3.up * detectionWidth, 
                 transform.position + Vector3.up * detectionWidth + detectionDir * earlyAvoidanceDistance);
             Gizmos.DrawLine(transform.position + Vector3.down * detectionWidth, 
@@ -410,6 +431,13 @@ namespace Life
             {
                 Gizmos.color = Color.green;
                 Gizmos.DrawWireSphere(new Vector3(transform.position.x, targetY, transform.position.z), 0.3f);
+                
+                // Draw avoidance state
+                if (isAvoidingObstacle)
+                {
+                    Gizmos.color = Color.magenta;
+                    Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, targetY, transform.position.z));
+                }
             }
         }
     }
