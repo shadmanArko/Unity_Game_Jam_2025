@@ -2008,6 +2008,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c16586b3c9046dd9f9dc5c7e0a6fde6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NotificationSystem.NotificationCanvasController
+--- !u!1001 &6150909794095570099
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5820270146560696947, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.58492
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820270146560696947, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.54131
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820270146560696947, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820270146560696947, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820270146560696947, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820270146560696947, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820270146560696947, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820270146560696947, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820270146560696947, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820270146560696947, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113401405883368791, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77a3adaeea0831d42985af9aa6476738, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2019,3 +2076,4 @@ SceneRoots:
   - {fileID: 215392157}
   - {fileID: 1942969935}
   - {fileID: 1300351520}
+  - {fileID: 6150909794095570099}

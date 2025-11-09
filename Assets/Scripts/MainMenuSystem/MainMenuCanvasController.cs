@@ -1,3 +1,4 @@
+using SoundSystem;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
@@ -11,6 +12,7 @@ namespace MainMenuSystem
         private void Start()
         {
             snoozeButton.onClick.AddListener(OnPressSnoozeButton);
+            SoundManager.Instance.PlaySFX("alarm");
         }
 
         private void OnPressSnoozeButton()
