@@ -2173,7 +2173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b30358b68ec05a4f9f8d4855ef50bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  chunkIndex: 9
+  chunkIndex: 10
 --- !u!212 &1232660307
 SpriteRenderer:
   m_ObjectHideFlags: 0

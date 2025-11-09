@@ -2804,7 +2804,7 @@ GameObject:
   - component: {fileID: 3826536775440820505}
   m_Layer: 0
   m_Name: office
-  m_TagString: Untagged
+  m_TagString: Office
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

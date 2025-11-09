@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Utilities;
 
@@ -63,7 +64,13 @@ namespace Life
         // Computed road bounds
         private float minY => roadCenterY - roadHalfWidth;
         private float maxY => roadCenterY + roadHalfWidth;
-    
+
+        private void OnEnable()
+        {
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+            destinationTarget = GameObject.FindGameObjectWithTag("Office")?.transform;
+        }
+
         void Start()
         {
             targetY = transform.position.y;
@@ -76,6 +83,7 @@ namespace Life
             }
 
             _animator = GetComponent<Animator>();
+            
         }
     
         void Update()
