@@ -12,6 +12,8 @@ namespace Life
         private bool useXBounds = true;
 
         public bool canMove;
+        
+        
 
         public void EnableMovement() => canMove = true;
 
