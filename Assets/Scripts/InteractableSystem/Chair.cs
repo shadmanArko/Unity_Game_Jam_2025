@@ -5,18 +5,26 @@ using Utilities;
 
 namespace InteractableSystem
 {
-    public class FridgeInteractable : Interactable
+    public class Chair : Interactable
     {
-        [SerializeField] private SpriteRenderer spriteRend;
-        [SerializeField] private Sprite fridgeOpenSprite;
-        [SerializeField] private Sprite fridgeCloseSprite;
-
-        [SerializeField] private GameObject tableFood;
+        [SerializeField] private GameObject food;
         
+        public override void Start()
+        {
+            base.Start();
+            IsInteractable = true;
+            timeToFinishTask = 3f;
+
+            moneyChange = 0;
+            energyChange = 30;
+            timeChange = -10;
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if(!other.gameObject.CompareTag("Player")) return;
-            if(!IsInteractable) return;
+            if(!food.activeSelf) return;
+            if(!isInteractable) return;
             ShowInteractPopUp();
         }
         
@@ -39,15 +47,14 @@ namespace InteractableSystem
         public override async void Interact(SimplePlayerController player)
         {
             if(!IsInteractable) return;
-            spriteRend.sprite = fridgeOpenSprite;
+            
             player.DisableMovement();
             await FillSliderOverTimeAsync(timeToFinishTask);
             OnInteractionComplete();
-            player.EnableMovement();
             await Task.Delay(500);
-            spriteRend.sprite = fridgeCloseSprite;
-            tableFood.gameObject.SetActive(true);
-            IsInteractable = false;
+            player.EnableMovement();
+            food.SetActive(false);
+            HideInteractPopUp();
         }
 
         public override void OnInteractionComplete()
