@@ -158,6 +158,9 @@ MonoBehaviour:
   isShowingPopUp: 0
   timeToFinishTask: 2
   timeToFinishSlider: {fileID: 1470294818779987768}
+  energyChange: 0
+  timeChange: 0
+  moneyChange: 0
 --- !u!114 &6352512506385895532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,7 +790,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.288
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

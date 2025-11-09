@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SimplePlayerController
   moveSpeed: 3
   useXBounds: 1
-  minX: -10
+  minX: -28
   maxX: 48.5
   useYBounds: 1
   minY: -4.1
