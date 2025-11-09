@@ -1065,6 +1065,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 215392157}
     m_Modifications:
+    - target: {fileID: 2008227442532552974, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: assetLayers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: assetLayers.Array.data[1].startX
+      value: -5.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: assetLayers.Array.data[2].startX
+      value: 0.443
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: assetLayers.Array.data[1].spacing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: assetLayers.Array.data[1].yOffset
+      value: 6.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: assetLayers.Array.data[2].spacing
+      value: 7.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: assetLayers.Array.data[2].yOffset
+      value: 3.394
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: assetLayers.Array.data[1].repeatCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: assetLayers.Array.data[1].assetPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: assetLayers.Array.data[2].assetPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: 'assetLayers.Array.data[1].assetPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2432439652024698925, guid: 944ffa45bb9c41f4da9043aa20dd0989, type: 3}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: 'assetLayers.Array.data[1].assetPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2432439652024698925, guid: 944ffa45bb9c41f4da9043aa20dd0989, type: 3}
+    - target: {fileID: 3478778400345473554, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+      propertyPath: 'assetLayers.Array.data[2].assetPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3218032305891336131, guid: 16faa159915434e46ba771382aa23560, type: 3}
     - target: {fileID: 8341936765510709701, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
       propertyPath: m_Name
       value: MapGenerator
@@ -1110,7 +1166,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3822089865783649331, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+    - {fileID: 5299006949168212598, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+    - {fileID: 8580530376427046848, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+    - {fileID: 1968717903742596420, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+    - {fileID: 8662288304805909081, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+    - {fileID: 6133917815123195826, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+    - {fileID: 3199018723045182014, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+    - {fileID: 4331939149731237078, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+    - {fileID: 329537492525098436, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
+    - {fileID: 621330635311827640, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa37838df573aa4a9bd470e843ae5ed, type: 3}
