@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utilities;
 
 public class RoadChunk : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class RoadChunk : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player entered chunk " + chunkIndex);
+        }
+
+        if (other.CompareTag("Vehicle"))
+        {
+            Debug.Log("Vehicle entered chunk " + chunkIndex);
+            Actions.OnPlayerEnteredRoadChunkIndex?.Invoke(chunkIndex);
         }
     }
 }

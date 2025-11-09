@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1806031506604238259}
   m_Layer: 10
   m_Name: Ubercar
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,8 +111,8 @@ MonoBehaviour:
   reverseSpeed: 3
   stopDistance: 0.5
   laneChangeSpeed: 3
-  minY: -2.73
-  maxY: 0.98
+  roadCenterY: -3.1
+  roadHalfWidth: 2
   earlyAvoidanceDistance: 9.74
   detectionWidth: 1
   obstacleLayer:
@@ -120,10 +120,14 @@ MonoBehaviour:
     m_Bits: 256
   avoidanceOffset: 0
   safetyMargin: 0.3
+  stuckCheckInterval: 2
+  stuckDistanceThreshold: 0.5
+  stuckTimeThreshold: 3
   player: {fileID: 0}
   destinationTarget: {fileID: 0}
   pickupRadius: 2
   waitTimeBeforeStart: 1
+  isBike: 0
 --- !u!114 &286350982924268765
 MonoBehaviour:
   m_ObjectHideFlags: 0

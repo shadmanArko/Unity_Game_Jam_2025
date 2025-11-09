@@ -60,14 +60,23 @@ public class GameplayCanvas : MonoBehaviour
 
    private void OnBikeCallButtonClicked()
    {
-      Actions.OnBikeCalledAction?.Invoke();
-      ToggleMobileScreen();
+      if (currentMoney >= baseUberBikeFair)
+      {
+         Actions.OnBikeCalledAction?.Invoke();
+         ToggleMobileScreen();
+      }
+
+      
    }
 
    private void OnCarCallButtonClicked()
    {
-      Actions.OnCarCalledAction?.Invoke();
-      ToggleMobileScreen();
+      if (currentMoney >= baseUberCarFair)
+      {
+         Actions.OnCarCalledAction?.Invoke();
+         ToggleMobileScreen();
+      }
+      
    }
 
    private void ToggleMobileScreen()

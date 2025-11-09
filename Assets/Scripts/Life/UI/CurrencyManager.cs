@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using Utilities;
 
 public class CurrencyManager : MonoBehaviour
@@ -7,8 +8,8 @@ public class CurrencyManager : MonoBehaviour
     public int maxEnergy = 100;
     public int startingEnergy = 60;
     public int startingMoney = 500;
-    private int currentEnergy;
-    private int currentMoney;
+    public int currentEnergy;
+    public int currentMoney;
     private void Start()
     {
         currentEnergy = startingEnergy;

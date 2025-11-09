@@ -24,6 +24,10 @@ public class ObstacleSpawner : MonoBehaviour
         bool isMovingForward = chunkIndex > lastChunkIndex;
         lastChunkIndex = chunkIndex;
         var probability = UnityEngine.Random.Range(0f, 1f);
+        if (chunkIndex>8)
+        {
+            probability = 1;
+        }
         var targetChunkIndex = chunkIndex+1;
         if (isMovingForward && probability < obstacleSpawnProbability)
         {
@@ -39,6 +43,7 @@ public class ObstacleSpawner : MonoBehaviour
                     var obstacle = GameObject.Instantiate(officeBlockerObjects[UnityEngine.Random.Range(0, officeBlockerObjects.Count)],
                         targetChunk.transform.position,
                         Quaternion.identity);
+                    
                     spawnedObstacles.Add(obstacle);
                 }
                 else
@@ -46,6 +51,7 @@ public class ObstacleSpawner : MonoBehaviour
                     var obstacle = GameObject.Instantiate(roadBlockerObstacles[UnityEngine.Random.Range(0, roadBlockerObstacles.Count)],
                         targetChunk.transform.position,
                         Quaternion.identity);
+                    
                     spawnedObstacles.Add(obstacle);
                 }
                 

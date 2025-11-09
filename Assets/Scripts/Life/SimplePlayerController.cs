@@ -13,7 +13,8 @@ namespace Life
 
         public bool canMove;
         
-        
+        public float energyDecreaseRate = 3f;
+        public float energyDecreaseInterval = 1f;
 
         public void EnableMovement() => canMove = true;
 
@@ -68,13 +69,16 @@ namespace Life
             // Get WASD input
             var moveInputX = SimpleInputManager.Instance.GetAxis("Horizontal"); // A/D or Left/Right arrows
             var moveInputY = SimpleInputManager.Instance.GetAxis("Vertical"); // W/S or Up/Down arrows
-
+            if (GameReference.instance.currencyManager.currentEnergy <= 5)
+            {
+                moveSpeed = 0.2f;
+            }
             if (!canMove)
             {
                 moveInputX = 0;
                 moveInputY = 0;
             }
-
+            DecreaseEnergyOverTime();
             moveInput = new Vector2(moveInputX, moveInputY);
 
             // Check if player is moving
@@ -99,6 +103,20 @@ namespace Life
             // Update sorting order based on Y position (optional for 2.5D games)
             // UpdateSortingOrder();
         }
+
+        private void DecreaseEnergyOverTime()
+        {
+            var currentEnergy = GameReference.instance.currencyManager.currentEnergy;
+
+            // Calculate 3% of current energy
+            int decreaseAmount = (int)(currentEnergy * 0.03f);
+
+            // Apply the decrease
+
+            // Invoke the action, optionally passing the decreased amount if needed
+            Actions.OnDecreaseEnergyAction?.Invoke(decreaseAmount);
+        }
+
 
         private void FixedUpdate()
         {

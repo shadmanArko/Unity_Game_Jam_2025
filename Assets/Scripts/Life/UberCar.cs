@@ -430,7 +430,9 @@ namespace Life
                 }
             }
         }
-    
+
+        
+
         public void ResetCar()
         {
             currentState = CarState.Idle;

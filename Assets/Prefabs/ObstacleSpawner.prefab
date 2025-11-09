@@ -53,5 +53,4 @@ MonoBehaviour:
   officeBlockerObjects:
   - {fileID: 2793638002524223528, guid: 0f4762f95679f45409178f8e2cc8642f, type: 3}
   - {fileID: 4849956599889316191, guid: 44da37839df929a4082de9b5482b704e, type: 3}
-  - {fileID: 1359973094451454926, guid: d4b96609241323c42889f6cb6ab84f15, type: 3}
   obstacleSpawnProbability: 0.5
