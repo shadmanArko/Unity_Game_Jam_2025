@@ -698,13 +698,17 @@ PrefabInstance:
       propertyPath: m_IncludeLayers.m_Bits
       value: 192
       objectReference: {fileID: 0}
+    - target: {fileID: 7906316732592577745, guid: ad6fafc312ad8934ca287b0f44b1da20, type: 3}
+      propertyPath: maxX
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 8709100626063288371, guid: ad6fafc312ad8934ca287b0f44b1da20, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8709100626063288371, guid: ad6fafc312ad8934ca287b0f44b1da20, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1091,7 +1095,7 @@ MonoBehaviour:
   maxY: 2.06
   useXBounds: 1
   minX: -20
-  maxX: 103
+  maxX: 250
   useLookAhead: 1
   lookAheadDistanceX: 3
   lookAheadDistanceY: 1
@@ -1541,7 +1545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8418914949376378087, guid: 785cb2b1ffeebef4b8f854fd4116b3f7, type: 3}
       propertyPath: m_SortingOrder
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 8418914949376378087, guid: 785cb2b1ffeebef4b8f854fd4116b3f7, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
